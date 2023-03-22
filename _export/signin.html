@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/bootstrap-grid.min.css">
+    <link rel='stylesheet' href="libs/slick/slick.css" />
+    <link rel='stylesheet' href="libs/slick/slick-theme.css" />
+    <link rel="stylesheet" href="libs/fi/css/uicons-regular-rounded.css">
+     
+    <link rel='stylesheet' href="css/style.css" />
+    <link rel="stylesheet" href="css/signin.css">
+    <script src="libs/jquery.min.js"></script>
+</head>
+
+<body class="is-loading">
+    <div class="loading-box">
+        <div class="content">
+            <img src="img/logo.png" alt="">
+            <p><img src="img/loading.gif" alt="">&nbsp;&nbsp;Loading...</p>
+
+        </div>
+    </div>
+
+    <nav class='nav is-scrolled'>
+        <div class="search-box">
+            <form action="viewall" method="GET">
+                <input placeholder="What are you looking for.." name="keyword" type="text" class="input">
+                <button type="submit"><i class="fi fi-rr-search"></i></button>
+            </form>
+            <button class="close"><i class="fi fi-rr-cross"></i></button>
+        </div>
+        <div class="left-nav">
+
+            <a href="index.html">
+                <img class='logo' src="img/logo.png" />
+            </a>
+            <div class='category'>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="explore.html">Explore</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Who We Are</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-nav">
+            <ul class="links">
+                <li>
+                    <a class="link-a" href="signin.html">Sign In</a>
+                </li>
+                <li>
+                    <a href="cart.html" class="cart ico">
+                        <i class="fi fi-rr-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="search ico">
+                        <i class="fi fi-rr-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br>
+    <div class="login-form" id="login-form">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('login-form');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+            setTimeout(function () {
+                $(".login-form .sign-in-container").css("display", "none");
+            }, 600)
+        });
+
+        signInButton.addEventListener('click', () => {
+            $(".login-form .sign-in-container").css("display", "block");
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+
+    <br><br><br>
+    <footer class="footer">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="part">
+                    <img class="logo" src="img/logo.png">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius obcaecati veritatis!
+                        Dolore,
+                        ipsam sit!</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="part">
+                    <h3>Site Map:</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fi fi-rr-angle-double-small-right"></i> Home </a></li>
+                        <li><a href="explore.html"><i class="fi fi-rr-angle-double-small-right"></i> Explore </a></li>
+                        <li><a href="about.html"><i class="fi fi-rr-angle-double-small-right"></i> Who We Are </a></li>
+                        <li><a href="contact.html"><i class="fi fi-rr-angle-double-small-right"></i> Contact Us </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="part">
+                    <div class="contact-info-box">
+                        <div class="contact-info">
+                            <i class="fi fi-rr-building"></i>
+                            <p>0999 999 999</p>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fi fi-rr-envelope"></i>
+                            <p>info@mail.com</p>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href="#"><img src="img/facebook.svg"></a>
+                        <a href="#"><img src="img/instagram.svg" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="part">
+                    <h3>Contact Us</h3>
+                    <form action="#" method="POST" class="contact-form">
+                        <input class="input1" name="email" value="" placeholder="Your Email Address" /><br>
+                        <textarea class="input1" name="message" value="" placeholder="Your Message"></textarea>
+                        <div class="ta-r">
+                            <button type="submit" class="mbtn">
+                                <i class="fi fi-rr-paper-plane"></i> &nbsp;Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="copy-right">
+            <p>Cats Home - All Rights Reserved © 2021</p>
+        </div>
+    </footer>
+
+    <script src="libs/slick/slick.js"></script>
+    <script src="js/scripts.js?v=2"></script>
+</body>
+
+</html>
